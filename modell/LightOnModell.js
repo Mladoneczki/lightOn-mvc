@@ -20,14 +20,28 @@ export default class LightOnModell {
     //megváltoztatja a listában az aktuális elemet
     this.#lista[id]=!this.#lista[id]
     //illetve a szomszédokat
+
+    let hossz=this.#lista.length-1
     if (id!=0){
-      this.#lista[id-1]=!this.#lista[id-1]
+      if(id!=3&&id!=6){
+      this.#lista[id-1]=!this.#lista[id-1]}
       
     }
-    if(id!=this.#lista.length-1){
-      this.#lista[id+1]=!this.#lista[id+1]
+    if(id!=hossz){
+      console.log(id)
+      if(id!=2&&id!=5){
+      this.#lista[id+1]=!this.#lista[id+1]}
     }
+    if (id >= 3){  
+      this.#lista[id-3] = !this.#lista[id-3];
+    }
+    if (id + 3 < hossz){ 
+      this.#lista[id+3] = !this.#lista[id+3];
+    }
+    
+    }
+
     
     
   }
-}
+
